@@ -1,0 +1,57 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <h1>JS / Quadratic Equation</h1>
+        <h2>Máquina trabajando no molestar</h2>
+        
+        <button class="btn" onclick="quadraticEq()"> Im Just a button</button>
+
+       <script>
+           
+            function quadraticEq(a,b,c){
+
+                a = prompt("Enter the first number: ");
+                b = prompt("Enter the second number: ");
+                c = prompt("Enter the third number: ");
+
+                // program to solve quadratic equation
+                let root1, root2;
+
+                // calculate discriminant
+                let discriminant = b * b - 4 * a * c;
+
+                // condition for real and different roots
+                if (discriminant > 0) {
+                    root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                    root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+
+                    // result
+                    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+                }
+
+                // condition for real and equal roots
+                else if (discriminant == 0) {
+                    root1 = root2 = -b / (2 * a);
+
+                    // result
+                    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+                }
+
+                // if roots are not real
+                else {
+                    let realPart = (-b / (2 * a)).toFixed(2);
+                    let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
+
+                    // result
+                    console.log("---- RESULT MODA FOKA ----");
+                    console.log(
+                    `The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
+                );
+                }
+            }
+            
+        </script>
+    </body>
+</html>
